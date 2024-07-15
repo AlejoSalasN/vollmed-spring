@@ -1,5 +1,5 @@
 
-create table medicos(
+create table if not exists medicos(
 
     id bigint not null auto_increment,
     nombre varchar(100) not null,
@@ -11,7 +11,12 @@ create table medicos(
     complemento varchar(100),
     numero varchar(20),
     ciudad varchar(100) not null,
+    telefono varchar(20) not null,
+    activo tinyint,
+
 
     primary key(id)
 
 );
+
+update medicos set activo = 1;

@@ -11,7 +11,11 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
     Page<Medico> findByActivoTrue(Pageable paginacion);
 
 
-
+    /**
+     * @param especialidad
+     * @param fecha
+     * @return
+     */
     @Query("""
             select m from Medico m
             where m.activo = 1 and
